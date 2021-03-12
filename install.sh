@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FONTS_DIR=$HOME/.fonts
-TOP_FONTS=("Menlo-Regular.ttf" "Monaco-Linux.ttf" "DejaVuSansMono.ttf" "3270Medium.otf" "FiraCode-Regular.ttf" "Inconsolata-Regular.ttf")
+TOP_FONTS=("Menlo-Regular.ttf" "Monaco-Linux.ttf" "DejaVuSansMono.ttf" "3270Medium.otf" "FiraCode-Regular.ttf" "Inconsolata-Regular.ttf", "VictorMono-Regular.ttf")
 
 function die () {
     echo "${@}"
@@ -24,7 +24,7 @@ fi
 
 for i in ${TOP_FONTS[*]}; do
     echo "Downloading $i"; echo
-    wget -c https://github.com/hbin/top-programming-fonts/raw/master/$i \
+    wget -c https://github.com/JanGalek/top-programming-fonts/raw/master/$i \
       || die "Fail to download ${i}"
     mv $i $FONTS_DIR || die "Could not install $i"
     echo "Installed $i successfully"; echo
